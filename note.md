@@ -101,4 +101,6 @@ yarn start
 * 分割代入2: const response = { data: [ { name: 'aaa' }, { id: 'bbb' } ] }; const { data: users = [] } = response;
 * スプレッド構文: const arr1 = ['a', 'b']; const arr2 = [ ...arr1, 'c'];
 * 分割代入とスプレッド構文の組み合わせ: const user = { id: 1, name: 'aaa', email: 'aaa@bbb' }; const { id, ...userWithoutId } = user;
-* 
+* オブジェクトのコピーはObject.assign()だと値の追加変更ができない。なので分割代入( const original = {a: 1}; const copy = {...original};)すると良い。
+  * ただシャローコピーのためプロパティの値が配列やオブジェクトだった場合その値までコピーされないことに注意
+  * nullやundefinedが含まれなければ、JSON.stringify()したのをJSON.parse()するとよい
