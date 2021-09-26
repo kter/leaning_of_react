@@ -34,8 +34,8 @@ __EOF__
 
 ```
 nodenv install -l
-nodenv install 14.4.0
-nodenv global 14.4.0
+nodenv install 14.15.0
+nodenv global 14.15.0
 ```
 
 ## VSCodeのプラグインをインストール
@@ -53,4 +53,12 @@ Get History
 VSCodeVim
 Remote - WSL
 Live Share
+```
+
+# サンプルアプリを起動してみる
+
+```
+npx create-react-app hello-world --template=typescript
+cd hello-world
+yarn start
 ```
