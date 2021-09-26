@@ -62,3 +62,19 @@ npx create-react-app hello-world --template=typescript
 cd hello-world
 yarn start
 ```
+
+* public/index.html -> src/index.tsxへの対応付けは、npx create-react-appでインストールされるreact-scriptsがbabelやwebpackを使って行っている
+* パッケージをインストール: `yarn install` or `yarn`
+* 依存関係はyarn.lockに保存される
+* package.jsonのscriptsエントリは`yarn ○○`で実行
+* scriptsの予約ワード(start): 開発用アプリケーションサーバの起動コマンド登録用
+* scriptsの予約ワード(restart): 開発用アプリケーションサーバの再起動コマンド登録用
+* scriptsの予約ワード(stop): 開発用アプリケーションサーバの停止コマンド登録用
+* scriptsの予約ワード(test): テスト開始コマンド登録用
+* フックコマンドの予約ワード(preinstall / postinstall): パッケージがインストールされる前後に実行
+* フックコマンドの予約ワード(preuninstall / postuninstall): パッケージがアンインストールされる前後に実行
+* フックコマンドの予約ワード(prestart / poststart): startスクリプトが走る前後に実行
+* フックコマンドの予約ワード(pretest, posttest): testスクリプトが走る前後に実行
+* フックコマンドの予約ワード(prepare): npm installコマンド実行時にインストール系の処理が終わった一番最後に実行
+
+# ES6について
