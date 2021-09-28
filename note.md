@@ -104,3 +104,8 @@ yarn start
 * オブジェクトのコピーはObject.assign()だと値の追加変更ができない。なので分割代入( const original = {a: 1}; const copy = {...original};)すると良い。
   * ただシャローコピーのためプロパティの値が配列やオブジェクトだった場合その値までコピーされないことに注意
   * nullやundefinedが含まれなければ、JSON.stringify()したのをJSON.parse()するとよい
+* アロー関数式: const hoge = (n) => { return n; };
+  * もしくは const hoge = n => n;
+* JavaScriptのようなプロトタイプベースは抽象としてのクラスが存在しない
+  * オブジェクトは直接他のオブジェクトを継承する
+  * 継承元のオブジェクトをプロトタイプと呼ぶ
