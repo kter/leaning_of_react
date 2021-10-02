@@ -113,4 +113,28 @@ yarn start
 * Null合体演算子: `??`で左辺がnullかundefinedのときだけ右辺が評価される。`||`でも代用できる場合があるが、0や空文字の場合を考えるとできる限りNull合体演算子を使った方がよい
 * `this`はその関数が実行されるコンテキストであるオブジェクトへの参照が格納されている暗黙の引数
 　　* `call`や`apply`でthisを呼び出し側から任意のオブジェクトに指定することができる
-　　　　* const hoge = Hoge.call({ hage: 1 }, 'hoge'};これでHogeオブジェクトのthisには{ hage: 1 }が入る
+　　* const hoge = Hoge.call({ hage: 1 }, 'hoge'};これでHogeオブジェクトのthisには{ hage: 1 }が入る
+
+# TypeScriptについて
+
+* 型の指定: const hoge: number = 3;
+* オブジェクトの型指定: const hoge: { key1: string, key2: number } = { key1: 'aaa', key2: 1 }
+  * もしくはinterfaceを定義して使う
+  * readonly装飾子で書き換え不可
+  * プロパティ名の末尾に`?`をつけると省略可能
+  * プロパティを後で追加したい時はインデックスシグネチャを設定しておく
+* 文字列リテラル型: let Mary: 'Cat' | 'Dog' | 'Rabbit' = 'Cat'; Mary = 'Rabbit';
+* タプル型: 個々の要素の方とその順番や要素数に制約を設けられる配列の型: const charAttrs: [number, string, boolean] = [1, 'patty', true];
+* any型: なんでもあり
+* unknown型: 
+* never型: 何も代入できない
+* interface定義時にこのようにすると関数で型指定したことになる: interface NumOp { (n: number, m: number): number; }
+* ジェネリクス記法: const toArray = <T>(arg1: T, arg2: T): T[] => [arg1, arg2];
+  * 関数を呼ぶ時に型を指定することができる: toArray<string>("aaa", "bbb")
+* 継承よりも合成。あまりクラスを継承するのは良くない。独立性を高めた部品を組み合わせる
+* クラスを定義するとインターフェース型宣言とコンストラクタ関数の宣言が行われる。そのためインターフェースとしても使える
+* テンプレートリテラル型: type dateFormat = `${number}-${number}-${number}`;としたら数字以外入らない
+* TypeScriptはオーバーロードが使える。同一の関数で引数だけ異なる定義
+ 
+ 
+ 
